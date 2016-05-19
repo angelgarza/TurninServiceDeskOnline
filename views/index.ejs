@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      #nav {
+        line-height:30px;
+        background-color:aquamarine;
+        height:300px;
+        width:150px;
+        float:left;
+        padding:5px;
+      }
+      #section {
+        width:350px;
+        float:left;
+        padding:10px;
+        }
+    </style>
+  </head>
+  <body>
+--->
+  <div id = "nav">
+    <a href="/about">About</a>
+      <br />
+    <a href="/login">Login</a>
+      <br />
+    <a href="recipient/all">Recipients</a>
+      <br />
+    <a href="/sender/all">Senders</a>
+      <br />
+    <a href="/sender/new">Add New Sender</a>
+      <br />
+  </div>
+  <div id = "section">
+
+
+  </div>
+  </body>
+</html>
+
+<% include ./partials/header.ejs %>
+<body>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<% if(typeof fname !== "undefined") { %><a href="/logout">Logout</a><% } %>
+<% include ./partials/footer.ejs %>

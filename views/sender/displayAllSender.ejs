@@ -1,0 +1,19 @@
+<% include ../partials/header.ejs %>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Senders</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/sender/?sender_id=<%= rs[i].sender_id %>"> <%= rs[i].email %> </a></td>
+
+        </tr>
+        <% } %>
+    </table>
+    </br>
+
+    <% } else { %>
+    No Sender exists.
+    <% } %>
+</div>
+<% include ../partials/footer.ejs %>

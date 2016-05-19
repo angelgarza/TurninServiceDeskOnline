@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>All Recipient></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/recipient/?recipient_id=<%= rs[i].recipient_id %>"> <%= rs[i].fname %> </a></td>
+            <td><a href="/recipient/?recipient_id=<%= rs[i].recipient_id %>"> <%= rs[i].lname %> </a></td>
+
+        </tr>
+        <% } %>
+    </table>
+    </br>
+
+    <% } else { %>
+    No recipient exists.
+    <% } %>
+</div>
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,20 @@
+<% include ../partials/header.ejs %>
+<% if(rs.length > 0) { %>
+Tracking Number: <%= rs[0].tracking_num %>
+<br /><br />
+
+<br /><br />
+Package Type: <%= rs[0].package_type %>
+<br /><br />
+Package Received:
+<ul>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <li><%= rs[i].street_num %>, <%= rs[i].city%>, <%= rs[i].state%> <%= rs[i].zip%></li>
+
+    <% } %>
+</ul>
+
+<% } else { %>
+No recipient matched  <%= recipient_id %>.
+<% } %>
+<% include ../partials/footer.ejs %>

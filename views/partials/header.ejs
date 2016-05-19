@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Service Desk Online</title>
+    <style>
+        label {
+            width:100px;
+            display:inline-block;
+            margin-bottom:10px;
+        }
+    </style>
+    <% if (typeof js_includes !== 'undefined') { %>
+        <% for(var i=0; i < js_includes.length; i++) { %>
+            <script src="<%= js_includes[i] %>"></script>
+        <% }%>
+    <% } %>
+</head>
+<body>
+<div style="float:right;">
+    <% if(typeof fname !== "undefined") { %>
+    Welcome, <%= fname %>
+    <% } else { %>
+    <a href="/login">Login</a>
+    <% } %>
+</div>
+<!--
+<div id="header">
+    <h1>Service Desk Online</h1>
+</div>
+-->

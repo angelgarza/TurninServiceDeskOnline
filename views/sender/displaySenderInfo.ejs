@@ -1,0 +1,20 @@
+<% include ../partials/header.ejs %>
+<% if(rs.length > 0) { %>
+Sender: <%= rs[0].fname %>
+<br /><br />
+
+<br /><br />
+email: <%= rs[0].email %>
+<br /><br />
+Location(s):
+<ul>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <li><%= rs[i].street_num %>, <%= rs[i].city%>, <%= rs[i].state%> <%= rs[i].zip%></li>
+
+    <% } %>
+</ul>
+
+<% } else { %>
+No Sender matched sender_id <%= sender_id %>.
+<% } %>
+<% include ../partials/footer.ejs %>

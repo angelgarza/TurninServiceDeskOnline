@@ -1,0 +1,25 @@
+<% include ../partials/header.ejs %>
+<% var js_includes = ['https://code.jquery.com/jquery-1.12.3.min.js', '/javascripts/recipient_ajax.js']%>
+
+<% if(rs.length > 0) { %>
+<h1>Find Your Order</h1>
+<br />
+Tracking Number(s):
+<ul>
+    <% for(var i=0; i < rs.length; i++) { %>
+        <li><%= rs[i].tracking_num %></li>
+    <% } %>
+</ul>
+<form>
+    Track: <br />
+    <input name="Tracking" id="tracking_num" type="text">
+    <button id="GetTracking">Got it!</button>
+</form>
+<% } else { %>
+No tracking matched tracking number <%= tracking_num %>
+<% } %>
+<script>
+    var tID = <%=tracking_num %>
+    var rID = <%=recipient_id %>
+</script>
+<% include ../partials/footer.ejs %>
